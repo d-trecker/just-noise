@@ -2,6 +2,7 @@ const router = require("express").Router();
 const withAuth = require('../utils/auth');
 const { Post, User, Comment } = require("../models");
 
+//get routes
 router.get("/", withAuth, (req, res) => {
   Post.findAll({
     where: {
