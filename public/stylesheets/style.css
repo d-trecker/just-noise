@@ -1,1 +1,269 @@
-/* RESET? css framework? */
+* {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+  color: rgb(0, 0, 0);
+  background-color: #17223b;
+}
+
+#main-title {
+  font-size: 1.5em;
+  color: #11242f;
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.1), 0 0 0.25em rgb(0, 247, 255);
+  align-items: center;
+  background-color: #1d3e53;
+  border-bottom: 4px solid black;
+}
+
+nav {
+  /* display: flex;
+  flex-direction: row;
+  justify-content: space-between; */
+  border-bottom: 2px solid black;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  transition: color 0.1s;
+  font-size: 0.7em;
+}
+
+a:hover {
+  color: #03bdf0;
+}
+
+/* #logout {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  transition: color 0.1s;
+  font-size: 1em;
+} */
+
+button {
+  background-color: #2930ef;
+  border: 0;
+  padding: 1%;
+  color: white;
+  font-weight: bold;
+  transition: background-color 0.1s;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #04deff;
+}
+
+.post-list {
+  margin: 0;
+  padding: 0;
+}
+
+textarea,
+input {
+  padding: 0.5%;
+  border-radius: 5px;
+  border: 3px solid rgb(8, 118, 135);
+  background-color: #eae6e6a0;
+}
+
+textarea:focus,
+input:focus {
+  outline: none;
+  border: 1px solid #0cc1ea;
+}
+
+textarea {
+  min-width: 40%;
+  min-height: 100px;
+}
+
+form > div {
+  margin-bottom: 2%;
+}
+
+form label {
+  display: block;
+  font-size: 25px;
+}
+
+.wrapper {
+  width: 100%;
+  min-height: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  border-bottom: 4px solid rgb(2, 0, 0);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 4%;
+  background-color: #1d3e53;
+}
+
+/* header h1 {
+    font-size: 3em;
+  } */
+
+main {
+  flex: 1;
+  padding: 2% 4%;
+}
+
+.btn-no-style {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: none;
+  color: #000000;
+  font-size: 0.7em;
+  font-weight: bold;
+  transition: color 0.1s;
+}
+
+.btn-no-style:hover {
+  background: none;
+  color: #03bdf0;
+}
+
+.delete-post-btn {
+  background-color: #d41491;
+}
+
+.delete-post-btn:hover {
+  background-color: #ff62ed;
+}
+/*---Login page CSS ---- */
+.logsign {
+  text-align: center;
+  align-items: center;
+  color: rgb(0, 247, 255);
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.1), 0 0 0.25em rgb(5, 58, 60);
+  text-decoration: underline;
+  background: rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  width: auto;
+}
+
+li::marker {
+  color: #39a2db;
+}
+
+#your-posts {
+  color: #39a2db;
+  text-decoration: underline;
+}
+
+/*---Post CSS ---- */
+.post {
+  margin-bottom: 2%;
+  line-height: 150%;
+  background-color: #39a2db;
+  border: 3px solid black;
+  text-align: center;
+}
+
+.post .title span {
+  font-style: italic;
+  font-size: 90%;
+  width: auto;
+}
+
+.title {
+  color: #39a2db;
+  background-color: #054763;
+  border-bottom: 3px solid black;
+}
+
+#new-post {
+  color: #1d3e53;
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.1), 0 0 0.25em rgb(0, 247, 255);
+  background: rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+/*---Edit Post CSS ---- */
+#edit-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-link {
+  display: block;
+  margin: -1.5% 0 2% 0;
+}
+
+.edit-post-form {
+  margin-bottom: 5%;
+}
+
+a.edit-link {
+  display: inline-block;
+  position: relative;
+  color: #39a2db;
+  /* width: 15%; */
+}
+
+/*---Comment CSS---*/
+.comment-form {
+  margin-bottom: 5%;
+}
+
+.comment {
+  padding: 1%;
+  margin-bottom: 1%;
+}
+
+.comment:nth-child(odd) {
+  background-color: #054763;
+}
+
+.comment .meta {
+  font-size: 90%;
+  margin-bottom: 0.5%;
+  opacity: 0.6;
+}
+
+#post-title {
+  width: 300px;
+}
+
+#post-content {
+  width: 300px;
+  height: 100px;
+  resize: none;
+}
+/* 
+#my-post-list {
+  align-items: center;
+  text-align: center;
+} */
+
+footer {
+  border-top: 5px solid rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+  padding: 1%;
+  font-size: 110%;
+  background-color: #1d3e53;
+}
