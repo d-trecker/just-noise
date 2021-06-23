@@ -1,3 +1,3 @@
-DROP DATABASE IF EXISTS nosiest_db;
+DROP DATABASE IF EXISTS noisiest_db;
 
 CREATE DATABASE noisiest_db;
