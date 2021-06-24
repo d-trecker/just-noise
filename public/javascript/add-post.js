@@ -4,6 +4,10 @@ async function newFormHandler(event) {
   const title = document.querySelector('input[name="post-title"]').value;
   const post_content = document.querySelector('input[name="post-content"]').value;
   
+  var genre = document.getElementById("genre-picked");
+  var post_genre = genre.value;
+
+
   //Checks to see if title and content are filled out completely.
   if (!title || !post_content) {
     alert("Please fill out the form completely.");
@@ -14,6 +18,7 @@ async function newFormHandler(event) {
       body: JSON.stringify({
         title,
         post_content,
+        post_genre
       }),
       headers: {
         "Content-Type": "application/json",

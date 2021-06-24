@@ -18,7 +18,7 @@ const sess = {
     //Session expires in one hour.
     maxAge: 3600000,
   },
-  // rolling: true, 
+  rolling: true, 
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({
