@@ -1,39 +1,48 @@
 <html lang="en">
 
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Noise</title>
-    <link rel="stylesheet" href="/stylesheets/style.css" />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Noise</title>
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
 
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>
-          <nav>
-            <a href="/">Home</a>
-            {{#if loggedIn}}
-              <a href="/dashboard">Dashboard</a>
-              <button id="logout" class="btn-no-style">Logout</button>
-            {{else}}
-              <a href="/login">Login</a>
-            {{/if}}
-          </nav>
-          <a id="main-title">Just Noise</a>
-        </h1>
+<body>
+  <div class="wrapper">
+    <header>
+      <h1>
+        <nav>
+          <a href="/">Home</a>
+          {{#if loggedIn}}
+          <a href="/dashboard">Dashboard</a>
+          <button id="logout" class="btn-no-style">Logout</button>
+          
+          {{else}}
+          <a href="/login">Login</a>
+          {{/if}}
+        </nav>
+        <a id="main-title">Just Noise</a>
+      </h1>
 
-      </header>
-      <main>
-        {{{body}}}
-      </main>
-      <footer>
-        Made with CARE! 🤗
-      </footer>
-    </div>
-    {{#if loggedIn}}
-      <script src="/javascript/logout.js"></script>
-    {{/if}}
-  </body>
+      <div class="genres">
+            <button class="btn-no-style-genre" id= "rock" href="#">Rock</button>
+            <button class="btn-no-style-genre" id= "classical" href="#">Classical</button>
+            <button class="btn-no-style-genre" id= "metal" href="#">Metal</button>
+            <button class="btn-no-style-genre" id= "hip-hop" href="#">Hip-Hop</button>
+            <button class="btn-no-style-genre" id= "folk" href="#">Folk</button>
+          </div>
+
+    </header>
+    <main>
+      {{{body}}}
+    </main>
+    <footer>
+      Made with CARE! 🤗
+    </footer>
+  </div>
+  {{#if loggedIn}}
+  <script src="/javascript/logout.js"></script>
+  {{/if}}
+</body>
 
 </html>

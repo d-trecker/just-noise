@@ -1,7 +1,16 @@
 <ol class="post-list">
+  {{!-- Posts --}}
   {{#each posts as |post|}}
   <li>
     {{> post-info post }}
   </li>
   {{/each}}
+  {{!-- Genres --}}
+  {{#if genres.Rock}}
+  {{#each genre as |genre|}}
+  <li>
+    {{> post-info post }}
+  </li>
+  {{/each}}
+  {{/if}}
 </ol>
