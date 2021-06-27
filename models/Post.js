@@ -23,7 +23,11 @@ Post.init(
     },
     post_genre: {
       type: DataTypes.STRING,
+<<<<<<< HEAD
       allowNull: false,
+=======
+      allowNull: false, 
+>>>>>>> 992898664041822da34864275b17f6bf6405dc32
     },
     user_id: {
       type: DataTypes.INTEGER,

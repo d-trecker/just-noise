@@ -10,6 +10,7 @@ router.get('/', (req, res) => {
       'id',
       'post_content',
       'title',
+      'post_genre',
       'created_at'
     ],
     order: [['created_at', 'DESC']],
@@ -75,11 +76,14 @@ router.get("/:id", (req, res) => {
     });
 });
 
+
+
 //----Post post route----
 router.post("/", withAuth, (req, res) => {
   Post.create({
     title: req.body.title,
     post_content: req.body.post_content,
+    post_genre: req.body.post_genre,
     user_id: req.session.user_id
   })
     .then((dbPostData) => res.json(dbPostData))
@@ -94,7 +98,7 @@ router.post("/", withAuth, (req, res) => {
 router.put("/:id", withAuth, (req, res) => {
   Post.update(
     {
-      title: req.body.title,
+      post_content: req.body.post_content,
     },
     {
       where: {

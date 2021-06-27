@@ -1,37 +1,32 @@
 {
-  "name": "hacker-news-clone",
+  "name": "just-noise",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
-  "scripts": {
-    "test": "jest",
-    "seeds": "node seeds/index.js",
-    "dev": "nodemon server.js",
-    "start": "node server.js"
-  },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "bcrypt": "^4.0.1",
-    "connect-session-sequelize": "^6.1.1",
-    "dotenv": "^8.2.0",
+    "bcrypt": "^5.0.1",
+    "connect-session-sequelize": "^7.1.1",
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
-    "express-handlebars": "^3.1.0",
-    "express-session": "^1.17.0",
-    "handlebars": "^4.7.3",
-    "mysql2": "^2.1.0",
-    "nodemon": "^2.0.7",
-    "sequelize": "^5.22.4"
+    "express-handlebars": "^5.3.2",
+    "express-session": "^1.17.2",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.6.2"
   },
-  "devDependencies": {
-    "jest": "^25.1.0"
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/d-trecker/music-placeholder.git"
+    "url": "git+https://github.com/d-trecker/just-noise.git"
   },
+  "author": "",
+  "license": "ISC",
   "bugs": {
-    "url": "https://github.com/d-trecker/music-placeholder/issues"
+    "url": "https://github.com/d-trecker/just-noise/issues"
   },
-  "homepage": "https://github.com/d-trecker/music-placeholder#readme"
+  "homepage": "https://github.com/d-trecker/just-noise#readme"
 }
