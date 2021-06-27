@@ -86,7 +86,7 @@ router.get("/genre/:query", (req, res) => {
   Post.findAll({
     attributes: ["id", "post_content", "post_genre", "title", "created_at"],
     order: [["created_at", "DESC"]],
-    where: { post_genre: req.params.genre },
+    where: { post_genre: req.params.query },
     include: [
       {
         model: Comment,
@@ -104,7 +104,6 @@ router.get("/genre/:query", (req, res) => {
   })
     .then((dbPostData) => {
       const posts = dbPostData.map((post) => post.get({ plain: true }));
-      //pass a single post object into the homepage template data
       res.render("homepage", {
         posts,
         loggedIn: req.session.loggedIn,

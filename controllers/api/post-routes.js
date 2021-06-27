@@ -76,6 +76,8 @@ router.get("/:id", (req, res) => {
     });
 });
 
+
+
 //----Post post route----
 router.post("/", withAuth, (req, res) => {
   Post.create({
@@ -122,14 +124,7 @@ router.delete("/:id", withAuth, (req, res) => {
   Post.destroy({
     where: {
       id: req.params.id,
-      // post_id: req.params.post_id, 
     },
-    // include: [
-    //   {
-    //     model: Comment,
-    //     attributes: ["id", "comment_text", "post_id", "user_id", "created_at", "user"],
-    //   },
-    // ]
   })
     .then((dbPostData) => {
       if (!dbPostData) {
