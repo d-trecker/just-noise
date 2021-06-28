@@ -2,42 +2,67 @@
   box-sizing: border-box;
 }
 
+:root {
+  --main-color: #b3b3b3;
+  --second-color: #cccccc;
+  --text-color-lt:  #b9b9b9;
+  --text-color-drk:  #0c1404;
+  --hover-color: #009452;
+  --header-color: #191919;
+  --button-primary: #009452;
+  --button-hover: #00b966;
+  --button-delete: #d9534f;
+  --button-delete-hover: #c30b05;
+  --info: #5bc0de;
+  --success: #009452;
+}
+
 body,
 html {
   height: 100%;
   padding: 0;
   margin: 0;
   font-family: sans-serif;
-  color: rgb(0, 0, 0);
-  background-color: #17223b;
+  color: var(--text-color-lt);
+  background-color: var(--main-color);
 }
 
 #main-title {
   font-size: 1.5em;
-  color: #11242f;
-  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.1), 0 0 0.25em rgb(0, 247, 255);
+  color: var(--hover-color);
   align-items: center;
-  background-color: #1d3e53;
-  border-bottom: 4px solid black;
+  /* background-color: #1d3e53; */
+  border-bottom: 4px solid var(--text-color-lt);
 }
 
 nav {
-  /* display: flex;
+  display: flex;
   flex-direction: row;
-  justify-content: space-between; */
-  border-bottom: 2px solid black;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 2px;
+  /* border-bottom: 2px solid black; */
+  text-decoration: none;
+}
+
+nav a {
+  font-size: 1.2em;
+  padding: 5px;
+  color: var(--text-color-lt);
 }
 
 a {
   text-decoration: none;
-  color: black;
+  color: var(--text-color-drk);
   font-weight: bold;
   transition: color 0.1s;
   font-size: 0.7em;
 }
 
 a:hover {
-  color: #03bdf0;
+  color: var(--hover-color);
 }
 
 /* #logout {
@@ -49,10 +74,11 @@ a:hover {
 } */
 
 button {
-  background-color: #2930ef;
+  background-color: var(--button-primary);
   border: 0;
-  padding: 1%;
-  color: white;
+  font-size: 1.2em;
+  padding: 5px;
+  color: var(--text-color-lt);
   font-weight: bold;
   transition: background-color 0.1s;
   cursor: pointer;
@@ -60,7 +86,7 @@ button {
 }
 
 button:hover {
-  background-color: #04deff;
+  background-color: var(--button-hover);
 }
 
 .post-list {
@@ -72,14 +98,14 @@ textarea,
 input {
   padding: 0.5%;
   border-radius: 5px;
-  border: 3px solid rgb(8, 118, 135);
+  /* border: 3px solid rgb(8, 118, 135); */
   background-color: #eae6e6a0;
 }
 
 textarea:focus,
 input:focus {
   outline: none;
-  border: 1px solid #0cc1ea;
+  border: 1px solid var(--button-hover);
 }
 
 textarea {
@@ -97,10 +123,13 @@ form label {
   margin: 5;
 }
 
+.signup-div {
+  margin: 18;
+}
+ 
 .wrapper {
   width: 100%;
   min-height: 100%;
-  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -109,9 +138,13 @@ form label {
 header {
   border-bottom: 4px solid rgb(2, 0, 0);
   display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
   justify-content: space-between;
   padding: 0 4%;
-  background-color: #1d3e53;
+  background-color: var(--header-color);
+  width: 100%;
 }
 
 /* header h1 {
@@ -120,13 +153,40 @@ header {
 
 main {
   flex: 1;
-  padding: 2% 4%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.text {
+  color: var(--header-color);
 }
 
 .genres {
   display: flex;
   justify-content: center;
   padding: 0%;
+  font-size: 1.1em;
+  }
+
+  .your-posts {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .posts-board {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
   }
   
   .btn-no-style-genre {
@@ -135,7 +195,7 @@ main {
     padding: 5;
     cursor: pointer;
     text-decoration: none;
-    color: #000000;
+    color: var(--text-color-lt);
     font-size: 1.3em;
     font-weight: bold;
     transition: color 0.1s;
@@ -145,7 +205,7 @@ main {
   
   .btn-no-style-genre:hover {
     background: none;
-    color: #03bdf0;
+    color: var(--hover-color);
     outline: none;
   }
 
@@ -155,44 +215,55 @@ main {
   padding: 0;
   cursor: pointer;
   text-decoration: none;
-  color: #000000;
+  color: var(--text-color-lt);
   font-size: 0.7em;
   font-weight: bold;
   transition: color 0.1s;
 }
 
+/* .btn {
+  margin: 5px;
+} */
+
 .btn-no-style:hover {
   background: none;
-  color: #03bdf0;
+  color: var(--hover-color);
 }
 
+.logout-btn {
+  font-size: 1em;
+  font-style: italic;
+}
+
+
 .delete-post-btn {
-  background-color: #d41491;
+  background-color: var(--button-delete);
 }
 
 .delete-post-btn:hover {
-  background-color: #ff62ed;
+  background-color: var(--button-delete-hover);
 }
 /*---Login page CSS ---- */
 .logsign {
   text-align: center;
   align-items: center;
-  color: rgb(0, 247, 255);
-  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.1), 0 0 0.25em rgb(5, 58, 60);
+  color: var(--text-color-lt);
   text-decoration: underline;
-  background: rgba(0, 0, 0, 0.5);
+  background: var(--header-color);
   box-sizing: border-box;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
   border-radius: 10px;
-  width: auto;
+  width: 40%;
+  /* margin: 20px; */
+  padding: 20px;
 }
 
 li::marker {
-  color: #39a2db;
+  color: var(--success);
 }
 
 #your-posts {
-  color: #39a2db;
+  color: var(--text-color-drk);
   text-decoration: underline;
 }
 
@@ -207,7 +278,7 @@ li::marker {
 }
 
 .select-selected {
-  background-color: #17223b;
+  background-color: var(--second-color);
 }
 
 /*style the arrow inside the select element:*/
@@ -231,7 +302,6 @@ li::marker {
 /*style the items (options), including the selected item:*/
 .select-items div,.select-selected {
   color: #11242f;
-  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.1), 0 0 0.25em rgb(0, 247, 255);
   padding: 8px 16px;
   border: 1px solid transparent;
   cursor: pointer;
@@ -241,7 +311,7 @@ li::marker {
 /*style items (options):*/
 .select-items {
   position: absolute;
-  background-color: #17223b;
+  background-color: var(--second-color);
   top: 100%;
   left: 0;
   right: 0;
@@ -254,14 +324,14 @@ li::marker {
 }
 
 .select-items div:hover, .same-as-selected {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: var(--hover-color);
 }
 
 /*---Post CSS ---- */
 .post {
   margin-bottom: 2%;
   line-height: 150%;
-  background-color: #39a2db;
+  background-color: var(--second-color);
   border: 3px solid black;
   text-align: center;
 }
@@ -273,15 +343,14 @@ li::marker {
 }
 
 .title {
-  color: #39a2db;
-  background-color: #054763;
+  color: var(--hover-color);
+  background-color: var(--hover-color);
   border-bottom: 3px solid black;
 }
 
 #new-post {
-  color: #1d3e53;
-  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.1), 0 0 0.25em rgb(0, 247, 255);
-  background: rgba(0, 0, 0, 0.5);
+  color: var(--text-color-lt);
+  background: var(--header-color);
   box-sizing: border-box;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
   border-radius: 10px;
@@ -289,6 +358,7 @@ li::marker {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  padding: 20px;
 }
 /*---Edit Post CSS ---- */
 #edit-body {
@@ -305,10 +375,20 @@ li::marker {
   margin-bottom: 5%;
 }
 
+.edit-post-title {
+  color: var(--text-color-drk);
+}
+
+.by-you-on {
+  color: var(--text-color-drk);
+}
+
 a.edit-link {
   display: inline-block;
   position: relative;
-  color: #39a2db;
+  color: var(--text-color-drk);
+  font-style: italic;
+  font-size: 1em;
   /* width: 15%; */
 }
 
@@ -332,6 +412,10 @@ a.edit-link {
   opacity: 0.6;
 }
 
+span {
+  color: var(--header-color);
+}
+
 #post-title {
   width: 300px;
 }
@@ -353,20 +437,19 @@ footer {
   justify-content: center;
   padding: 1%;
   font-size: 110%;
-  background-color: #1d3e53;
+  background-color: var(--header-color);
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 833px) {
   header {
-    border-bottom: 2px solid rgb(2, 0, 0);
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     padding: 0 4%;
-    background-color: #1d3e53;
   }
+
   h1 {
     display: flex;
     flex-direction: row;
@@ -375,7 +458,15 @@ footer {
     align-items: center;
     padding: 0 4%;
   }
+
   nav {
     margin-bottom: 10px;
+  }
+
+  .signup {
+    
+    margin: 20px;
+    padding: 20px;
+    max-width: 90%;
   }
 }
