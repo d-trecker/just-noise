@@ -61,8 +61,13 @@ a {
   font-size: 0.7em;
 }
 
+.post-header:hover {
+  color: var(--second-color);
+}
+
 a:hover {
   color: var(--hover-color);
+  cursor: pointer;
 }
 
 /* #logout {
@@ -78,6 +83,7 @@ button {
   border: 0;
   font-size: 1.2em;
   padding: 5px;
+  margin: 4px;
   color: var(--text-color-lt);
   font-weight: bold;
   transition: background-color 0.1s;
@@ -87,25 +93,27 @@ button {
 
 button:hover {
   background-color: var(--button-hover);
+  cursor: pointer;
 }
 
 .post-list {
   margin: 0;
   padding: 0;
+  width: 90%;
 }
 
 textarea,
 input {
   padding: 0.5%;
   border-radius: 5px;
-  /* border: 3px solid rgb(8, 118, 135); */
+  border: 2px solid var(--button-primary);
   background-color: #eae6e6a0;
 }
 
 textarea:focus,
 input:focus {
   outline: none;
-  border: 1px solid var(--button-hover);
+  border: 2px solid var(--button-hover);
 }
 
 textarea {
@@ -130,13 +138,14 @@ form label {
 .wrapper {
   width: 100%;
   min-height: 100%;
-  margin: 0 auto;
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
 }
 
 header {
-  border-bottom: 4px solid rgb(2, 0, 0);
+  border-bottom: 4px solid var(--button-primary);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -204,6 +213,7 @@ main {
   }
   
   .btn-no-style-genre:hover {
+    cursor: pointer;
     background: none;
     color: var(--hover-color);
     outline: none;
@@ -226,6 +236,7 @@ main {
 } */
 
 .btn-no-style:hover {
+  cursor: pointer;
   background: none;
   color: var(--hover-color);
 }
@@ -241,6 +252,7 @@ main {
 }
 
 .delete-post-btn:hover {
+  cursor: pointer;
   background-color: var(--button-delete-hover);
 }
 /*---Login page CSS ---- */
@@ -254,12 +266,19 @@ main {
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
   border-radius: 10px;
   width: 40%;
-  /* margin: 20px; */
   padding: 20px;
 }
 
+
 li::marker {
-  color: var(--success);
+  font-size: 1.4em;
+  font-weight: bold;
+  color: var(--button-primary);
+}
+
+.post-ol {
+  margin: 7px;
+  padding: 29px;
 }
 
 #your-posts {
@@ -324,6 +343,7 @@ li::marker {
 }
 
 .select-items div:hover, .same-as-selected {
+  cursor: pointer;
   background-color: var(--hover-color);
 }
 
@@ -333,7 +353,9 @@ li::marker {
   line-height: 150%;
   background-color: var(--second-color);
   border: 3px solid black;
+  border-radius: 5px;
   text-align: center;
+  width: 100%;
 }
 
 .post .title span {
@@ -346,6 +368,7 @@ li::marker {
   color: var(--hover-color);
   background-color: var(--hover-color);
   border-bottom: 3px solid black;
+  font-size: 1.5em;
 }
 
 #new-post {
@@ -403,20 +426,24 @@ a.edit-link {
 }
 
 .comment:nth-child(odd) {
-  background-color: #054763;
+  background-color: var(--main-color);
 }
 
 .comment .meta {
-  font-size: 90%;
-  margin-bottom: 0.5%;
+  font-size: 1em;
+  margin: 5px;
+  padding: 5px;
   opacity: 0.6;
 }
 
 span {
   color: var(--header-color);
+  font-style: italic;
+  font-size: 1em;
+  margin: 20px;
 }
 
-#post-title {
+/* #post-title {
   width: 300px;
 }
 
@@ -424,7 +451,8 @@ span {
   width: 300px;
   height: 100px;
   resize: none;
-}
+} */
+
 /* 
 #my-post-list {
   align-items: center;
@@ -440,14 +468,14 @@ footer {
   background-color: var(--header-color);
 }
 
-@media only screen and (max-width: 833px) {
+@media only screen and (max-width: 1003px) {
   header {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    padding: 0 4%;
+    padding: 5px;
   }
 
   h1 {
@@ -459,14 +487,85 @@ footer {
     padding: 0 4%;
   }
 
-  nav {
-    margin-bottom: 10px;
-  }
-
-  .signup {
-    
+  .logsign {
     margin: 20px;
     padding: 20px;
-    max-width: 90%;
+    width: 90%;
+  }
+
+  .genres {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    font-size: 1em;
+  }
+}
+
+@media only screen and (max-width: 833px) {
+  header {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+  }
+
+  h1 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 0 4%;
+  }
+
+  .logsign {
+    margin: 20px;
+    padding: 20px;
+    width: 90%;
+  }
+
+  .genres {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    font-size: .9em;
+  }
+}
+
+@media only screen and (max-width: 410px) {
+  header {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+  }
+
+  h1 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 0 4%;
+  }
+
+  .logsign {
+    margin: 20px;
+    padding: 20px;
+    width: 90%;
+  }
+
+  .genres {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    font-size: .7em;
   }
 }

@@ -118,9 +118,10 @@
   </form>
 </section>
 {{#if posts.length}}
-<section class="your-posts">
+<div class="posts-board">
+  <section class="your-posts">
   <h2 id="your-posts">Your Posts</h2>
-  <ol class="posts-board">
+  <ol class="post-ol">
     {{#each posts as |post|}}
     <li>
       {{> post-info post}}
@@ -129,5 +130,6 @@
     {{/each}}
   </ol>
 </section>
+</div>
 {{/if}}
 <script src="/javascript/add-post.js"></script>
