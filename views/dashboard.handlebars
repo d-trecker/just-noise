@@ -2,7 +2,7 @@
   <h2>Create New Post</h2>
 
   <form class="new-post-form">
-    <div>
+    <div class="post-div">
       <label for="post-title">Title</label>
       <input type="text" id="post-title" name="post-title" />
     </div>
@@ -118,9 +118,10 @@
   </form>
 </section>
 {{#if posts.length}}
-<section>
+<div class="posts-board">
+  <section class="your-posts">
   <h2 id="your-posts">Your Posts</h2>
-  <ol>
+  <ol class="post-ol">
     {{#each posts as |post|}}
     <li>
       {{> post-info post}}
@@ -129,5 +130,6 @@
     {{/each}}
   </ol>
 </section>
+</div>
 {{/if}}
 <script src="/javascript/add-post.js"></script>
