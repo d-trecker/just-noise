@@ -90,7 +90,7 @@ router.put("/:id", withAuth, (req, res) => {
       });
   });
 
-//----Delet comment route----
+//----Delete comment route----
 router.delete("/:id", withAuth, (req, res) => {
     Comment.destroy({
         where: {
