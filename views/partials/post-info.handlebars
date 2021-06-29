@@ -1,10 +1,13 @@
 <article class="post">
-  <div class="title">
-    <a href="/post/{{id}}" target="" class="post-header">{{title}} by {{user.username}} on {{format_date created_at}} | Genre: {{post_genre}} </a>
-
+  
+  <div class ={{post_genre}}>
+    <a href="/post/{{id}}" target="" class="post-header">{{title}} by {{user.username}} on {{format_date created_at}} 
+    <br>Genre: {{post_genre}} </a>
   </div>
   <div class="meta">
-     <span>{{ post_content}} | </span>
+     <span>{{ post_content}} </span>
+     <br>
     <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
   </div>
 </article>
+

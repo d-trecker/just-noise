@@ -11,6 +11,7 @@ router.get('/', (req, res) => {
       'post_content',
       'title',
       'post_genre',
+      "post_url",
       'created_at'
     ],
     order: [['created_at', 'DESC']],
@@ -46,6 +47,7 @@ router.get("/:id", (req, res) => {
       "id",
       "post_content",
       "title",
+      "post_url",
       "created_at",
     ],
     include: [
@@ -76,14 +78,13 @@ router.get("/:id", (req, res) => {
     });
 });
 
-
-
 //----Post post route----
 router.post("/", withAuth, (req, res) => {
   Post.create({
     title: req.body.title,
     post_content: req.body.post_content,
     post_genre: req.body.post_genre,
+    post_url: req.body.post_url, 
     user_id: req.session.user_id
   })
     .then((dbPostData) => res.json(dbPostData))

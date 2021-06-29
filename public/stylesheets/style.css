@@ -3,11 +3,11 @@
 }
 
 :root {
-  --main-color: #b3b3b3;
+  --main-color: #F5EAEA;
   --second-color: #cccccc;
   --text-color-lt:  #b9b9b9;
-  --text-color-drk:  #0c1404;
-  --hover-color: #009452;
+  --text-color-drk:  #5B5656;
+  --hover-color: #7FCD91;
   --header-color: #191919;
   --button-primary: #009452;
   --button-hover: #00b966;
@@ -16,6 +16,8 @@
   --info: #5bc0de;
   --success: #009452;
 }
+
+
 
 body,
 html {
@@ -55,7 +57,7 @@ nav a {
 
 a {
   text-decoration: none;
-  color: var(--text-color-drk);
+  /* color: var(--second-color); */
   font-weight: bold;
   transition: color 0.1s;
   font-size: 0.7em;
@@ -63,6 +65,14 @@ a {
 
 .post-header:hover {
   color: var(--second-color);
+}
+
+.post-header {
+  overflow-wrap: anywhere;
+}
+
+div .meta {
+  overflow-wrap: anywhere;
 }
 
 a:hover {
@@ -127,7 +137,7 @@ form > div {
 
 form label {
   display: block;
-  font-size: 25px;
+  font-size: 36px;
   margin: 5;
 }
 
@@ -281,6 +291,7 @@ li::marker {
 }
 
 .post-ol {
+  width: 100%;
   margin: 7px;
   padding: 29px;
 }
@@ -368,12 +379,73 @@ li::marker {
   width: auto;
 }
 
+
+/* ------ post genere css */
 .title {
   color: var(--hover-color);
   background-color: var(--hover-color);
   border-bottom: 3px solid black;
   font-size: 1.5em;
 }
+
+.rock {
+  background-color: #4D4646;
+  border-bottom: 3px solid black;
+  font-family: 'Big Shoulders Stencil Display', cursive;
+  font-size: 1.5em;
+}
+
+.rock a {
+  color: var(--text-color-lt);
+}
+
+.classical {
+  background-color: #052c58;
+  font-family: 'Tangerine', cursive;
+  border-bottom: 3px solid black;
+  font-size: 1.8em;
+}
+
+.classical a {
+  color: gold;
+}
+
+.metal {
+  background-color: black;
+  border-bottom: 3px solid black;
+  font-family: 'Metal Mania', cursive;
+  font-size: 1.5em;
+}
+
+.metal a {
+  color: var(--text-color-lt);
+}
+
+.hiphop {
+  color: var(--hover-color);
+  font-family: 'Rock Salt', cursive;
+  background-color: var(--button-delete);
+  border-bottom: 3px solid black;
+  font-size: 1.2em;
+  padding: 3px;
+}
+
+.hiphop a {
+  color: var(--hover-color);
+}
+
+.folk {
+  background-color: rgb(83, 28, 18);
+  border-bottom: 3px solid black;
+  font-family: 'Cutive Mono', monospace;
+  font-size: 1.5em;
+}
+
+.folk a {
+  color: var(--hover-color);
+}
+
+/* ------End post genere css */
 
 #new-post {
   color: var(--text-color-lt);
@@ -425,19 +497,38 @@ a.edit-link {
 }
 
 .comment {
-  padding: 1%;
-  margin-bottom: 1%;
+  margin-bottom: 15px;
+  border: solid 3px black;
 }
 
+.comments {
+  width: 100%;
+}
+
+
 .comment:nth-child(odd) {
-  background-color: var(--main-color);
+  background-color: rgb(110, 110, 236);
+}
+
+.comment:nth-child(even) {
+  background-color: rgb(136, 235, 136);
 }
 
 .comment .meta {
+  color: var(--header-color);
   font-size: 1em;
-  margin: 5px;
+  /* margin: 5px; */
   padding: 5px;
   opacity: 0.6;
+  border-bottom: solid 4px black;
+}
+
+div .text {
+  overflow-wrap: anywhere;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  border-bottom: 2px solid black;
 }
 
 span {
@@ -504,6 +595,7 @@ footer {
     align-items: center;
     font-size: 1em;
   }
+  
 }
 
 @media only screen and (max-width: 833px) {
@@ -538,6 +630,21 @@ footer {
     align-items: center;
     font-size: .9em;
   }
+  .rock {
+    font-size: 1.7em;
+  }
+  .metal {
+    font-size: 1.5em;
+  }
+  .classical {
+    font-size: 1.9em;
+  }
+  .hiphop {
+    font-size: 1.2em;
+  }
+  .folk {
+    font-size: 1.3em;
+  }
 }
 
 @media only screen and (max-width: 410px) {
@@ -571,5 +678,20 @@ footer {
     justify-content: center;
     align-items: center;
     font-size: .7em;
+  }
+  .rock {
+    font-size: 1.4em;
+  }
+  .metal {
+    font-size: 1.4em;
+  }
+  .classical {
+    font-size: 1.8em;
+  }
+  .hiphop {
+    font-size: 1em;
+  }
+  .folk {
+    font-size: 1.2em;
   }
 }

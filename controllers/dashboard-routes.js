@@ -82,31 +82,4 @@ router.get('/edit/:id', withAuth, (req, res) => {
     });
 });
 
-// router.get('/comment/:id', withAuth, (req, res) => {
-//   Comment.findByPk(req.params.id, {
-//     attributes: [
-//       'id',
-//       'comment_text',
-//       "user_id",
-//       'post_id',
-//       'created_at',
-//     ],
-//   })
-//     .then(dbCommentData => {
-//       if (dbCommentData) {
-//         const comment = dbCommentData.get({ plain: true });
-        
-//         res.render('edit-comment', {
-//           comment,
-//           loggedIn: true
-//         });
-//       } else {
-//         res.status(404).end();
-//       }
-//     })
-//     .catch(err => {
-//       res.status(500).json(err);
-//     });
-// });
-
 module.exports = router;
