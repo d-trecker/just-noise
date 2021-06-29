@@ -134,6 +134,10 @@ form label {
 .signup-div {
   margin: 18;
 }
+
+#singup-link {
+  color: var(--text-color-lt);
+}
  
 .wrapper {
   width: 100%;

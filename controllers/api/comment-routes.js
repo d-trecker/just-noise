@@ -21,7 +21,7 @@ router.get("/", (req, res) => {
     });
 });
 
-//----Get single post route----
+//----Get single comment route----
 router.get("/comments/:id", (req, res) => {
   Comment.findOne({
     where: {
@@ -38,7 +38,7 @@ router.get("/comments/:id", (req, res) => {
   })
     .then((dbCommentData) => {
       if (!dbCommentData) {
-        res.status(404).json({ message: "No post found with this id" });
+        res.status(404).json({ message: "No comment found with this id" });
         return;
       }
       res.json(dbCommentData);
@@ -50,7 +50,7 @@ router.get("/comments/:id", (req, res) => {
 });
 
 //----Create Comment Route----
-router.post('/comments', withAuth, (req, res) => {  
+router.post('/', withAuth, (req, res) => {  
     if (req.session) {
         Comment.create({
             comment_text: req.body.comment_text,
@@ -66,7 +66,7 @@ router.post('/comments', withAuth, (req, res) => {
 });
 
 //----Update Comment route----
-router.put("/comments/:id", withAuth, (req, res) => {
+router.put("/:id", withAuth, (req, res) => {
     Comment.update(
       {
         comment_text: req.body.comment_text,
@@ -91,7 +91,7 @@ router.put("/comments/:id", withAuth, (req, res) => {
   });
 
 //----Delet comment route----
-router.delete("/comments/:id", withAuth, (req, res) => {
+router.delete("/:id", withAuth, (req, res) => {
     Comment.destroy({
         where: {
             id: req.params.id,
