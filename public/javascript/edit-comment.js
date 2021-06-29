@@ -1,14 +1,14 @@
-async function editFormHandler(event) {
+async function editCommentFormHandler(event) {
     event.preventDefault();
   
-    const post_content = document.querySelector('input[name="post-content"]').value.trim();
+    const comment_text = document.querySelector('input[name="comment-content"]').value.trim();
     const id = window.location.toString().split('/')[
       window.location.toString().split('/').length - 1
     ];
-    const response = await fetch(`/api/posts/${id}`, {
+    const response = await fetch(`/api/comments/${id}`, {
       method: 'PUT',
       body: JSON.stringify({
-        post_content
+        comment_text
       }),
       headers: {
         'Content-Type': 'application/json'
@@ -22,5 +22,5 @@ async function editFormHandler(event) {
     }
   }
   
-  document.querySelector('.edit-post-form').addEventListener('submit', editFormHandler);
+  document.querySelector('.edit-comment-form').addEventListener('submit', editCommentFormHandler);
   

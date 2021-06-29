@@ -21,8 +21,36 @@ router.get("/", (req, res) => {
     });
 });
 
+//----Get single post route----
+router.get("/comments/:id", (req, res) => {
+  Comment.findOne({
+    where: {
+      id: req.params.id,
+    },
+    attributes: [
+      'id',
+      'comment_text',
+      "user_id",
+      'post_id',
+      'created_at',
+    ],
+
+  })
+    .then((dbCommentData) => {
+      if (!dbCommentData) {
+        res.status(404).json({ message: "No post found with this id" });
+        return;
+      }
+      res.json(dbCommentData);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
 //----Create Comment Route----
-router.post('/', withAuth, (req, res) => {  
+router.post('/comments', withAuth, (req, res) => {  
     if (req.session) {
         Comment.create({
             comment_text: req.body.comment_text,
@@ -37,8 +65,33 @@ router.post('/', withAuth, (req, res) => {
     }
 });
 
+//----Update Comment route----
+router.put("/comments/:id", withAuth, (req, res) => {
+    Comment.update(
+      {
+        comment_text: req.body.comment_text,
+      },
+      {
+        where: {
+          id: req.params.id,
+        },
+      }
+    )
+      .then((dbCommentData) => {
+        if (!dbCommentData) {
+          res.status(404).json({ message: "No comment found with this id" });
+          return;
+        }
+        res.json(dbCommentData);
+      })
+      .catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
+      });
+  });
+
 //----Delet comment route----
-router.delete("/:id", withAuth, (req, res) => {
+router.delete("/comments/:id", withAuth, (req, res) => {
     Comment.destroy({
         where: {
             id: req.params.id,
