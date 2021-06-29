@@ -34,7 +34,7 @@ html {
   color: var(--hover-color);
   align-items: center;
   /* background-color: #1d3e53; */
-  border-bottom: 4px solid var(--text-color-lt);
+  border-bottom: 4px solid var(--hover-color);
 }
 
 nav {
@@ -159,7 +159,7 @@ form label {
 }
 
 header {
-  border-bottom: 4px solid var(--button-primary);
+  border-bottom: 4px solid var(--hover-color);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -283,12 +283,15 @@ main {
   padding: 20px;
 }
 
+ol {
+  list-style: none;
+}
 
-li::marker {
+/* li::marker {
   font-size: 1.4em;
   font-weight: bold;
   color: var(--button-primary);
-}
+} */
 
 .post-ol {
   width: 100%;
@@ -312,6 +315,8 @@ li::marker {
 }
 
 .select-selected {
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
   background-color: var(--second-color);
 }
 
@@ -350,6 +355,8 @@ li::marker {
   left: 0;
   right: 0;
   z-index: 99;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 /*hide the items when the select box is closed:*/
@@ -360,6 +367,11 @@ li::marker {
 .select-items div:hover, .same-as-selected {
   cursor: pointer;
   background-color: var(--hover-color);
+  border-radius: 10px;
+}
+
+.selected-items div {
+  border-radius: 10px;
 }
 
 /*---Post CSS ---- */
@@ -389,25 +401,32 @@ li::marker {
 }
 
 .rock {
-  background-color: #4D4646;
+  background-color: #C10000;
   border-bottom: 3px solid black;
   font-family: 'Big Shoulders Stencil Display', cursive;
   font-size: 1.5em;
 }
 
 .rock a {
-  color: var(--text-color-lt);
+  color: var(--second-color);
+}
+#rock:hover {
+  color: #C10000;
 }
 
 .classical {
-  background-color: #052c58;
+  background-color: #1A508B;
   font-family: 'Tangerine', cursive;
   border-bottom: 3px solid black;
   font-size: 1.8em;
 }
 
 .classical a {
-  color: gold;
+  color: #F6D887;
+}
+
+#classical:hover {
+  color: #F6D887;
 }
 
 .metal {
@@ -421,28 +440,40 @@ li::marker {
   color: var(--text-color-lt);
 }
 
+#metal:hover {
+  color: #3b3b3b;
+}
+
 .hiphop {
-  color: var(--hover-color);
   font-family: 'Rock Salt', cursive;
-  background-color: var(--button-delete);
+  background-color: #7952B3;
   border-bottom: 3px solid black;
   font-size: 1.2em;
   padding: 3px;
+
 }
 
 .hiphop a {
-  color: var(--hover-color);
+  color: #FFC107;;
+}
+
+#hip-hop:hover {
+  color: #7952B3;
 }
 
 .folk {
-  background-color: rgb(83, 28, 18);
+  background-color: #433520;
   border-bottom: 3px solid black;
   font-family: 'Cutive Mono', monospace;
   font-size: 1.5em;
 }
 
 .folk a {
-  color: var(--hover-color);
+  color: #FDE8CD;
+}
+
+#folk:hover {
+  color: #FDE8CD;
 }
 
 /* ------End post genere css */
@@ -497,8 +528,8 @@ a.edit-link {
 }
 
 .comment {
-  margin-bottom: 15px;
-  border: solid 3px black;
+  color: var(--text-color-lt);
+  border-top: solid 3px black;  
 }
 
 .comments {
@@ -507,11 +538,11 @@ a.edit-link {
 
 
 .comment:nth-child(odd) {
-  background-color: rgb(110, 110, 236);
+  background-color: var(--second-color);
 }
 
 .comment:nth-child(even) {
-  background-color: rgb(136, 235, 136);
+  background-color: var(--second-color);
 }
 
 .comment .meta {
@@ -519,8 +550,10 @@ a.edit-link {
   font-size: 1em;
   /* margin: 5px; */
   padding: 5px;
-  opacity: 0.6;
-  border-bottom: solid 4px black;
+ 
+  border-right: solid 3px black;
+  border-left: solid 3px black;
+  border-bottom: solid 2px black;
 }
 
 div .text {
@@ -528,16 +561,24 @@ div .text {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
+  border-right: solid 3px black;
+  border-left: solid 3px black;
   border-bottom: 2px solid black;
 }
 
 span {
   color: var(--header-color);
-  font-style: italic;
+  /* font-style: italic; */
   font-size: 1em;
   margin: 20px;
 }
 
+div.ecomment-link {
+  width: 100%;
+  background-color: var(--main-color);
+  padding-bottom: 7px;
+  font-style: italic;
+}
 /* #post-title {
   width: 300px;
 }
