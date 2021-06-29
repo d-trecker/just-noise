@@ -579,6 +579,13 @@ div.ecomment-link {
   padding-bottom: 7px;
   font-style: italic;
 }
+.ecomment-link a {
+  color: var(--text-color-drk);
+}
+
+.ecomment-link a:hover {
+  color: var(--header-color);
+}
 /* #post-title {
   width: 300px;
 }
