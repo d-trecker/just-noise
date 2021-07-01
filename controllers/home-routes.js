@@ -5,6 +5,7 @@ router.get("/", (req, res) => {
   console.log(req.session);
   Post.findAll({
     attributes: ["id", "post_content", "title", "post_genre", "created_at"],
+    order: [["created_at", "DESC"]],
     include: [
       {
         model: Comment,
@@ -43,13 +44,13 @@ router.get("/login", (req, res) => {
 });
 
 //----Get signup route for homepage----
-router.get('/signup', (req, res) => {
+router.get("/signup", (req, res) => {
   //--redirects if user is logged in--
   if (req.session.loggedIn) {
-    res.redirect('/');
+    res.redirect("/");
     return;
   }
-    res.render('signup');
+  res.render("signup");
 });
 
 router.get("/post/:id", (req, res) => {
@@ -80,6 +81,14 @@ router.get("/post/:id", (req, res) => {
       }
 
       const post = dbPostData.get({ plain: true });
+      console.log(post);
+      post.comments.forEach((comment) => {
+        if (req.session.user_id == comment.user_id) {
+          comment.modify = true;
+        } else {
+          comment.modify = false;
+        }
+      });
       res.render("single-post", {
         post,
         loggedIn: req.session.loggedIn,
@@ -91,29 +100,28 @@ router.get("/post/:id", (req, res) => {
     });
 });
 
-router.get('/comment/:id', (req, res) => {
+router.get("/comment/:id", (req, res) => {
   Comment.findByPk(req.params.id, {
-    attributes: [
-      'id',
-      'comment_text',
-      "user_id",
-      'post_id',
-      'created_at',
-    ],
+    attributes: ["id", "comment_text", "user_id", "post_id", "created_at"]
   })
-    .then(dbCommentData => {
+    .then((dbCommentData) => {
       if (dbCommentData) {
         const comment = dbCommentData.get({ plain: true });
-        
-        res.render('edit-comment', {
-          comment,
-          loggedIn: true
-        });
+        console.log(comment.user_id);
+        console.log(req.session.user_id);
+        if (req.session.user_id == comment.user_id) {
+          res.render("edit-comment", {
+            comment,
+            loggedIn: true,
+          });
+        } else {
+          res.redirect("/");
+        }
       } else {
         res.status(404).end();
       }
     })
-    .catch(err => {
+    .catch((err) => {
       res.status(500).json(err);
     });
 });
@@ -151,6 +159,5 @@ router.get("/genre/:query", (req, res) => {
       res.status(500).json(err);
     });
 });
-
 
 module.exports = router;
