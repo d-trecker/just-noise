@@ -6,6 +6,10 @@
   <div class="meta">
      <span>{{ post_content}} </span>
      <br>
+    <img src="{{post_url}}" >
+
+     <br>
     <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
   </div>
 </article>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>

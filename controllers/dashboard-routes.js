@@ -11,10 +11,12 @@ router.get("/", withAuth, (req, res) => {
     attributes: [
       "id",
       "post_content",
+      "post_url",
       "title",
       "post_genre",
       "created_at",
     ],
+    order: [["created_at", "DESC"]],
     include: [
       {
         model: Comment,

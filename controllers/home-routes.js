@@ -4,7 +4,7 @@ const { Post, User, Comment } = require("../models");
 router.get("/", (req, res) => {
   console.log(req.session);
   Post.findAll({
-    attributes: ["id", "post_content", "title", "post_genre", "created_at"],
+    attributes: ["id", "post_content", "title", "post_genre", "post_url", "created_at"],
     order: [["created_at", "DESC"]],
     include: [
       {
@@ -58,7 +58,7 @@ router.get("/post/:id", (req, res) => {
     where: {
       id: req.params.id,
     },
-    attributes: ["id", "post_content", "title", "post_genre", "created_at"],
+    attributes: ["id", "post_content", "title", "post_genre", "post_url", "created_at"],
     include: [
       {
         model: Comment,
@@ -129,7 +129,7 @@ router.get("/comment/:id", (req, res) => {
 //----Get all genre route----
 router.get("/genre/:query", (req, res) => {
   Post.findAll({
-    attributes: ["id", "post_content", "post_genre", "title", "created_at"],
+    attributes: ["id", "post_content", "post_genre", "title",  "post_url", "created_at"],
     order: [["created_at", "DESC"]],
     where: { post_genre: req.params.query },
     include: [
