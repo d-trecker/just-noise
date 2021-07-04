@@ -16,7 +16,16 @@
 A music blog site created for a community of users who love to share their latest music finds and leverage other fans’ finds to identify the latest and greatest music of today.
   
   # Installation
-  The following must be installed or linked in order to run the application properly: <em>npm install express sequelize mysql2</em>, <em>npm install dotenv</em>, <em>npm init -y</em> <em>bcrypt</em> from the command line to initialize a new Node.js package.
+  The following must be installed or linked in order to run the application properly: <em>"bcrypt": "^4.0.1",
+    "connect-session-sequelize": "^6.1.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "express-session": "^1.17.0",
+    "handlebars": "^4.7.3",
+    "mysql2": "^2.1.0",
+    "nodemon": "^2.0.7",
+    "sequelize": "^5.22.4"</em> from the command line to initialize a new Node.js package.
   
   # Usage
   ​  As a music blogger, I want to be able to quickly update my followers when I find new music.  
