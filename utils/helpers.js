@@ -18,4 +18,17 @@ module.exports = {
       .split("/")[0]
       .split("?")[0];
   },
+  render_url: (url) => {
+    const url_text = document.getElementById(post_url).value
+    if (url_text.includes(open.spotify)) {
+      var img = new Image();
+      img.src = 'spotify-button.png';
+      img.onclick = function () {
+        window.location.href = 'url'
+      };
+      document.appendChild(img);
+    } else {
+      return url;
+    }
+  }
 };
