@@ -5,15 +5,15 @@
   <br/><br/>
   [![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)
 
-  # Description
-A music blog site created for a community of users who love to share their latest music finds and leverage other fans’ finds to identify the latest and greatest music of today.
-
-  
   # Table of Contents 
+  * [Description](#Description)
   * [Installation](#installation)
   * [Usage](#usage)
   * [License](#license)
   * [Contributing](#contributing)
+<br></br>
+  # Description
+A music blog site created for a community of users who love to share their latest music finds and leverage other fans’ finds to identify the latest and greatest music of today.
   
   # Installation
   The following must be installed or linked in order to run the application properly: <em>npm install express sequelize mysql2</em>, <em>npm install dotenv</em>, <em>npm init -y</em> <em>bcrypt</em> from the command line to initialize a new Node.js package.
