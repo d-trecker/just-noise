@@ -6,9 +6,11 @@
   <div class="meta">
      <span class="post-content">{{ post_content}} </span>
      <br>
+     {{#if post_url}}
      <div class="post-img-div">
        <img class="post-img" src="{{post_url}}" >
      </div>
+     {{/if}}
      <br>
     <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
   </div>
