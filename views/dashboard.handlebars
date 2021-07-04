@@ -104,6 +104,13 @@
       <label for="post-content">Content</label>
       <input id="post-content" name="post-content" />
     </div>
+
+    <img src="" id="img-preview" />
+      <label class="file-upload-container" for="file-upload">
+        <input name = "post-url" id="file-upload" type="file" style="display:none;">
+        Select an Image
+      </label>
+
     <button type="submit" class="btn">Create</button>
   </form>
 </section>
@@ -123,3 +130,5 @@
 </div>
 {{/if}}
 <script src="/javascript/add-post.js"></script>
+<script src="/javascript/add-image.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>

@@ -1,5 +1,4 @@
-<article class="post">
-  
+<article class="post">  
   <div class ={{post_genre}}>
     <a href="/post/{{id}}" target="" class="post-header">{{title}} by {{user.username}} on {{format_date created_at}} 
     <br>Genre: {{post_genre}} </a>
@@ -7,7 +6,10 @@
   <div class="meta">
      <span>{{ post_content}} </span>
      <br>
+    <img src="{{post_url}}" >
+
+     <br>
     <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
   </div>
 </article>
-
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
