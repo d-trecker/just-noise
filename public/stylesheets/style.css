@@ -221,8 +221,8 @@ main {
   }
 
   .post-img {
-    width: 20%;
-    max-width: 40%;
+    width:50%;
+    max-width: 60%;
   }
 
   .post-img-div {
@@ -323,7 +323,7 @@ ol {
   padding: 29px;
 }
 
-.img-prvw {
+#img-preview {
   width: 50%;
 }
 
@@ -338,6 +338,7 @@ ol {
 }
 
 #your-posts {
+  font-size: 2.3em;
   color: var(--text-color-drk);
   text-decoration: underline;
 }
