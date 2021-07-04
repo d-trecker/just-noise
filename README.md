@@ -1,4 +1,4 @@
-# music-placeholder
+# Just Noise
   Deployed Link: https://just-noise.herokuapp.com/
   <br/>
   Repo Link: https://github.com/d-trecker/just-noise/tree/main
