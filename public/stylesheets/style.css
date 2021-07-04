@@ -131,13 +131,21 @@ textarea {
   min-height: 100px;
 }
 
+form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
 form > div {
   margin-bottom: 2%;
 }
 
 form label {
   display: block;
-  font-size: 36px;
+  font-size: 1.5em;
   margin: 5;
 }
 
@@ -205,6 +213,19 @@ main {
 
   .posts-board {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .post-img {
+    width: 20%;
+    max-width: 40%;
+  }
+
+  .post-img-div {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -293,10 +314,27 @@ ol {
   color: var(--button-primary);
 } */
 
+.file-upload-container {
+  font-size: 1em;
+}
 .post-ol {
   width: 100%;
   margin: 7px;
   padding: 29px;
+}
+
+.img-prvw {
+  width: 50%;
+}
+
+.post-content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 1;
 }
 
 #your-posts {
@@ -306,6 +344,10 @@ ol {
 
 /* Dropdown style */
 .custom-select {
+  /* justify-content: center; */
+  align-items: center;
+  width: 50%;
+  max-width: 50%;
   position: relative;
   font-family: Arial;
 }
@@ -315,6 +357,8 @@ ol {
 }
 
 .select-selected {
+  
+  justify-content: center;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
   background-color: var(--second-color);
@@ -479,6 +523,8 @@ ol {
 /* ------End post genere css */
 
 #new-post {
+  width: 30%;
+  max-width: 50%;
   color: var(--text-color-lt);
   background: var(--header-color);
   box-sizing: border-box;
@@ -647,6 +693,11 @@ footer {
 }
 
 @media only screen and (max-width: 833px) {
+  #new-post {
+    width: 100%;
+    max-width: 100%;
+  }
+
   header {
     display: flex;
     flex-direction: column;
@@ -693,9 +744,18 @@ footer {
   .folk {
     font-size: 1.3em;
   }
+  .post-img {
+    width: 50%;
+    /* max-width: 50%; */
+  }
 }
 
 @media only screen and (max-width: 410px) {
+  #new-post {
+    width: 100%;
+    max-width: 100%;
+  }
+
   header {
     display: flex;
     flex-direction: column;
@@ -741,5 +801,9 @@ footer {
   }
   .folk {
     font-size: 1.2em;
+  }
+  .post-img {
+    width: 60%;
+    /* max-width: 50%; */
   }
 }

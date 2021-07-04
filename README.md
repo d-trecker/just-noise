@@ -1,28 +1,40 @@
-# Just Noise
+# music-placeholder
+  Deployed Link: https://just-noise.herokuapp.com/
+  <br/>
+  Repo Link: https://github.com/d-trecker/just-noise/tree/main
+  <br/><br/>
+  [![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)
 
-## Description
-It’s time for musicians to come out of hiding and show themselves to the audience! Just Noise is a music blog site created for a community of users who love to share their latest music finds and leverage other fans’ finds to identify the latest and greatest music of today.  While focusing mainly on new artists and music this blog is a great place for them to get free exposure.
+  # Description
+A music blog site created for a community of users who love to share their latest music finds and leverage other fans’ finds to identify the latest and greatest music of today.
 
-The site offers easy use for users to input, edit, or delete their music finds and are able to list them into their respective genres.  
-
-## User stories
-As a music blogger, I want to be able to quickly update my followers when I find new music.  
-  When I identify a new album, I can enter information and a brief summary about the music on the blog site.
-  After I submit a blog post, I can edit the post’s contents
-  I can view my posts and track comments from other users
+  
+  # Table of Contents 
+  * [Installation](#installation)
+  * [Usage](#usage)
+  * [License](#license)
+  * [Contributing](#contributing)
+  
+  # Installation
+  The following must be installed or linked in order to run the application properly: <em>npm install express sequelize mysql2</em>, <em>npm install dotenv</em>, <em>npm init -y</em> <em>bcrypt</em> from the command line to initialize a new Node.js package.
+  
+  # Usage
+  ​  As a music blogger, I want to be able to quickly update my followers when I find new music.  
+When I identify a new album, I can enter information and a brief summary about the music on the blog site.
+After I submit a blog post, I can edit the post’s contents
+I can view my posts and track comments from other users
 As a music fan, I want to be able to keep up on the latest music via blogs.
-  When I enter the dashboard, I can see posts of different types of musics
-  If I select a genre, I can see all posts related to that genre
-  If I leave a comment, I can edit the comment at a later time
-
-## Screenshot
-<img width="1165" alt="Screen Shot 2021-06-28 at 10 22 29 PM" src="https://user-images.githubusercontent.com/79894201/123732332-5b49fb80-d85f-11eb-8826-c5dfa80e0caa.png">
-
-
-## Contributions
-Dylan Trecker
-Zak Stamps
-Justin Villena
-Cody Callahan
-Mike Ebener
+When I enter the dashboard, I can see posts of different types of musics
+If I select a genre, I can see all posts related to that genre
+If I leave a comment, I can edit the comment at a later time.
+ 
+  # License
+  This project is licensed under the Unlicense license.
+  
+  # Contributing
+  ​Contributors: Dylan Trecker, Zak Stamps, Justin Villena, Cody Callahan, Mike Ebener and Lots of help from our trusty 'ol friend Google.
+ 
+  If you have any questions about the repo, please open an issue withing the repo issues tab.
+  <br/></br>
+  ![img](./site.png)
 
