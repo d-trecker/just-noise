@@ -4,10 +4,11 @@
     <br>Genre: {{post_genre}} </a>
   </div>
   <div class="meta">
-     <span>{{ post_content}} </span>
+     <span class="post-content">{{ post_content}} </span>
      <br>
-    <img src="{{post_url}}" >
-
+     <div class="post-img-div">
+       <img class="post-img" src="{{post_url}}" >
+     </div>
      <br>
     <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
   </div>
