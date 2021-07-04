@@ -32,7 +32,7 @@ If I leave a comment, I can edit the comment at a later time.
   This project is licensed under the Unlicense license.
   
   # Contributing
-  ​Contributors: Dylan Trecker, Zak Stamps, Justin Villena, Cody Callahan, Mike Ebener and Lots of help from our trusty 'ol friend Google.
+  ​Contributors: <a href="https://github.com/d-trecker">Dylan Trecker</a>, <a href="https://github.com/theoneandonlyzako">Zak Stamps</a>, <a href="https://github.com/Jrvillena">Justin Villena</a>, <a href="https://github.com/cody-callahan">Cody Callahan</a>, <a href="https://github.com/Mike-Ebener">Mike Ebener</a> and Lots of help from our trusty 'ol friend Google.
  
   If you have any questions about the repo, please open an issue withing the repo issues tab.
   <br/></br>
