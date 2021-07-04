@@ -25,7 +25,7 @@ A music blog site created for a community of users who love to share their lates
     "handlebars": "^4.7.3",
     "mysql2": "^2.1.0",
     "nodemon": "^2.0.7",
-    "sequelize": "^5.22.4"</em> from the command line to initialize a new Node.js package.
+    "sequelize": "^5.22.4"</em> Or npm install from the command line.
   
   # Usage
   ​  As a music blogger, I want to be able to quickly update my followers when I find new music.  
