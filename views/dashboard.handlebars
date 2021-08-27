@@ -1,14 +1,9 @@
 <section id="new-post">
-  <h2>Create New Post</h2>
+  <h2 class="dash-intro">Share the latest jams!</h2>
 
-  <form class="new-post-form">
-    <div class="post-div">
-      <label for="post-title">Title</label>
-      <input type="text" id="post-title" name="post-title" />
-    </div>
+<form class="new-post-form">
 
-
-    <label for="post-genre">Choose a genre:</label>
+    <label for="post-genre">Genre</label>
     <div class="custom-select">
       <select name="post-genre" id="genre-picked">
         <option value="rock" class="dropdown-content">Rock</option>
@@ -16,7 +11,14 @@
         <option value="metal" class="dropdown-content">Metal</option>
         <option value="hiphop" class="dropdown-content">Hip-Hop</option>
         <option value="folk" class="dropdown-content">Folk</option>
+        <option value="blues" class="dropdown-content">Blues</option>
       </select>
+    </div>
+
+     
+    <div class="post-div">
+      <label for="post-title">Album or Song Title</label>
+      <input type="text" id="post-title" name="post-title" />
     </div>
 
     <script>
@@ -101,7 +103,7 @@
     </script>
 
     <div>
-      <label for="post-content">Content</label>
+      <label for="post-content">Summary</label>
       <input id="post-content" name="post-content" maxlength="200"/>
     </div>
 
@@ -111,7 +113,7 @@
         Upload an Image
       </label>
 
-    <button type="submit" class="btn">Create</button>
+    <button type="submit" class="btn">Post</button>
   </form>
 </section>
 {{#if posts.length}}

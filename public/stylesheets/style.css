@@ -117,7 +117,8 @@ input {
   padding: 0.5%;
   border-radius: 5px;
   border: 2px solid var(--button-primary);
-  background-color: #eae6e6a0;
+  /*new*/
+  background-color: var(--second-color);
 }
 
 textarea:focus,
@@ -316,6 +317,9 @@ ol {
 
 .file-upload-container {
   font-size: 1em;
+  color: blue;
+  text-decoration: underline;
+
 }
 .post-ol {
   width: 100%;
@@ -351,6 +355,8 @@ ol {
   max-width: 50%;
   position: relative;
   font-family: Arial;
+  border: 6px;
+  border-color: #00b966;
 }
 
 .custom-select select {
@@ -387,7 +393,11 @@ ol {
 .select-items div,.select-selected {
   color: #11242f;
   padding: 8px 16px;
-  border: 1px solid transparent;
+  /*new
+  border: 6px;
+  border-color: #00b966; */
+  outline: none;
+  border: 2px solid var(--button-hover);
   cursor: pointer;
   user-select: none;
 }
@@ -521,6 +531,23 @@ ol {
   color: #FDE8CD;
 }
 
+.blues {
+  background-color: #433520;
+  border-bottom: 3px solid black;
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.5em;
+}
+
+.blues a {
+  color: #FDE8CD;
+}
+
+#blues:hover {
+  color: #FDE8CD;
+}
+
+
+
 /* ------End post genere css */
 
 #new-post {
@@ -536,7 +563,10 @@ ol {
   align-items: center;
   text-align: center;
   padding: 20px;
+  
 }
+
+
 /*---Edit Post CSS ---- */
 #edit-body {
   display: flex;
@@ -567,6 +597,12 @@ a.edit-link {
   font-style: italic;
   font-size: 1em;
   /* width: 15%; */
+}
+
+/*Dashboard introduction - New */
+.dash-intro {
+  color: white;
+  text-decoration: underline;
 }
 
 /*---Comment CSS---*/
